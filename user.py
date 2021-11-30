@@ -149,4 +149,6 @@ class User:
 
     def getUID(self):
         return self.userID
+    #Login/Logout
+    def login(username,password):
     
