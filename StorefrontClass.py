@@ -136,7 +136,6 @@ class Storefront:
             self.inventory.append(x)
 
         cursor.close()
-        connection.close()
         
     def checkInventory(self):
         cursor = connection.cursor()
@@ -147,7 +146,6 @@ class Storefront:
             print(x)
 
         cursor.close()
-        connection.close()
         
     def loadUsers(self):
         cursor = connection.cursor()
@@ -160,7 +158,6 @@ class Storefront:
             self.users.append(x)
 
         cursor.close()
-        connection.close()
             
     def loadOrders(self):
         cursor = connection.cursor()
@@ -173,7 +170,6 @@ class Storefront:
             self.orders.append(x)
 
         cursor.close()
-        connection.close()
         
     def writeOrders(self):
         cursor = connection.cursor()
@@ -181,7 +177,6 @@ class Storefront:
         connection.commit()
 
         cursor.close()
-        connection.close()
         
     def writeCart(self):
         cursor = connection.cursor()
@@ -189,7 +184,6 @@ class Storefront:
         connection.commit()
 
         cursor.close()
-        connection.close()
 
     def writeItem(self, item):
         cursor = connection.cursor()
@@ -197,4 +191,3 @@ class Storefront:
         connection.commit()
 
         cursor.close()
-        connection.close()
