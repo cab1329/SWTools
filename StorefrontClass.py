@@ -42,7 +42,7 @@ class Storefront:
                 else if cartNum == 4:
                     self.cart.clearCart()
                 else if cartNum == 5:
-                    #again not sure how to implement
+                    self.checkout()
                 else if cartNum == 6:
                     pass
                 else:
@@ -121,7 +121,7 @@ class Storefront:
                 print("Invalid Answer, returning to main menu")
 
         else if checkout == n:
-
+            pass
         else:
             print("Invalid Answer, returning to main menu")
 
