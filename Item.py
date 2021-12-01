@@ -3,7 +3,7 @@
 class Item:
     
     #Constructor
-    def __init__(self, itemPrice, itemName, itemQuantity, cartID, itemID):
+    def __init__(self, itemPrice, itemName, itemQuantity, itemID):
         try:
             self.itemName = str(itemName)
         except:
@@ -20,10 +20,6 @@ class Item:
             print("Item.itemQuantity: TypeError")
         except:
             print("Item.itemQuantity: An unknown error occurred.")
-        try:
-            self.cartID = int(cartID)
-        except TypeError:
-            print("Item.cartID: TypeError")
         except:
             print("Item.cartID: An unknown error occurred.")
         try:
@@ -59,14 +55,6 @@ class Item:
         except:
             print("Item.setQuantity: An unknown error occurred.")
 
-    def setCart(self, cartID):
-        try:
-            self.cartID = int(cartID)
-        except TypeError:
-            print("Item.setCart: TypeError")
-        except:
-            print("Item.setCart: An unknown error occurred.")
-
     def setID(self, itemID):
         try:
             self.itemID = int(itemID)
@@ -85,9 +73,6 @@ class Item:
 
     def getQuantity(self):
         return self.itemQuantity
-
-    def getCart(self):
-        return self.cartID
 
     def getID(self):
         return self.itemID
