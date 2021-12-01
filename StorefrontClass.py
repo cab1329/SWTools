@@ -135,7 +135,7 @@ class Storefront:
         self.inventory = []
         
         for x in result:
-            self.inventory.append(x)
+            self.inventory.addItem()
 
         cursor.close()
         
@@ -193,3 +193,6 @@ class Storefront:
         connection.commit()
 
         cursor.close()
+
+    def setCurrUser(self, userID):
+        self.currentUser = userID
