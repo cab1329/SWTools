@@ -151,4 +151,5 @@ class User:
         return self.userID
     #Login/Logout
     def login(username,password):
+        cursor.execute('SELECT username,password FROM User')
     
