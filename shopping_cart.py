@@ -13,7 +13,7 @@ class Shopping_Cart:
         itemName = str(input('Enter item name: '))
         itemPrice = float(input('\nEnter the item price: '))
         itemQuantity = int(input('\nEnter the item quantity: '))
-        self.cartItems.append(ItemPurchase(itemName, itemPrice, itemQuantity))
+        self.cartItems.append(Item(itemName, itemPrice, itemQuantity))
     #remove from cart
     def removeItem(self):
         print('\nREMOVE ITEM ',end='\n')
