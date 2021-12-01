@@ -7,7 +7,7 @@ from shopping_cart import Shopping_Cart
 
 class Storefront:
     
-    def __init__(self, inventory, users, orders, cart, currentUser):
+    def __init__(self, inventory = [], users = [], orders = [], cart = [], currentUser = "NA" ):
         self.inventory = inventory
         self.users = users
         self.orders = orders
@@ -34,10 +34,9 @@ class Storefront:
                     self.cart.result_cart() 
                 else if cartNum == 2:
                     print("Which item would you like to remove?\n")
-                    for x in self.cart:
-                        print(x, ". ", self.cart(x), "\n")
-
-#not sure how to finish this command off, open to suggestions                        
+                    self.cart.result_cart()
+#not sure how to finish this command off, open to suggestions. We would need it to have a lot of different options and be open to all of them
+#will options. Please help with this one 
                 else if cartNum == 3:
                     #need to know how many items we are going to have before i create this command, also not sure how to implement
                 else if cartNum == 4:
@@ -98,7 +97,33 @@ class Storefront:
                 print("Invalid answer, returning to main menu")
             
             
-    def checkOut(self, """whatever the cart object is called"""):
+    def checkOut(self):
+        self.cart.result_cart()
+        print("Total: $", self.cart.get_valuecost_of_cart(), "\n")
+        checkout = input("Would you like to check out? y/n: ")
+        if checkout == y:
+            #none of these save to anything on purpose, this can be changed if you want to
+            input("Please enter your card number: ")
+            input("Please enter the expiration: ")
+            input("Please enter the CVV: ")
+
+            addressCheck = input("Is this address correct?\n", self.currentUser.getAddress(), "\n y/n: ")
+
+            if addressCheck == y:
+                self.orders.append(self.cart)
+                self.cart.clear()
+                print("Order has been placed, thank you for ordering!\n")
+
+            else if addressCheck == n:
+                print("Please edit your address in the Edit information tab and try again.")
+
+            else:
+                print("Invalid Answer, returning to main menu")
+
+        else if checkout == n:
+
+        else:
+            print("Invalid Answer, returning to main menu")
 
     def loadInventory(self):
         cursor = connection.cursor()
