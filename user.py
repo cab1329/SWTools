@@ -150,7 +150,7 @@ class User:
     def getUID(self):
         return self.userID
     #Login/Logout
-    def login(username,password):
+    def login(self,username,password):
         cursor = connection.cursor()
         cursor.execute('SELECT UserName FROM user WHERE UserName == username')
         test1= cursor.fetchone()
