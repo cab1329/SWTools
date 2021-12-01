@@ -3,10 +3,11 @@ from item import Item
 #Shopping cart class
 class Shopping_Cart:
     #Parameter Constructor
-    def __init__(self, customer_name = 'none', currentdate = 'January 1, 2021', cartItems = []):
+    def __init__(self, customer_name = 'none', currentdate = 'January 1, 2021', cartItems = [], cartID = 0):
         self.customer_name = customer_name
         self.currentdate = currentdate
         self.cartItems = cartItems
+        self.cartID = cartID
     #Add an item
     def addItem(self, string):
         print('\nADD ITEM ' , end='\n')
