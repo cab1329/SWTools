@@ -151,5 +151,15 @@ class User:
         return self.userID
     #Login/Logout
     def login(username,password):
-        cursor.execute('SELECT username,password FROM User')
+        cursor = connection.cursor()
+        cursor.execute('SELECT UserName FROM user WHERE UserName == username')
+        test1= cursor.fetchone()
+        if (test1 == username){
+            cursor.execute('SELECT Password FROM user WHERE UserName == test1')
+            test2= cursor.fetchone()
+            if test2==password{
+                print("login succesful")}
+            else{ print("login failed")}
+        else{print("login failed")}
+        }
     
