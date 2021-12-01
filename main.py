@@ -17,6 +17,16 @@ except:
     print("Failed connection.")
     sys.exit()
 
+store = Storefront(None, None, None, None, None)
 
+Storefront.loadUsers()
+Storefront.loadOrders()
+Storefront.loadInventory()
+
+Storefront.displayMenu()
+
+Storefront.writeOrders()
+Storefront.writeCart()
+Storefront.writeItem()
 
 connection.close

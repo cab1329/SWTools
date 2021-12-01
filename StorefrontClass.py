@@ -7,7 +7,7 @@ from shopping_cart import Shopping_Cart
 
 class Storefront:
     
-    def __init__(self, inventory = [], users = [], orders = [], cart = [], currentUser = "NA" ):
+    def __init__(self, inventory = Shopping_Cart("store", "permanent", None), users = [], orders = [], cart = Shopping_Cart(), currentUser = "0" ):
         self.inventory = inventory
         self.users = users
         self.orders = orders
