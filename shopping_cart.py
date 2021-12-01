@@ -3,8 +3,8 @@ from item import Item
 #Shopping cart class
 class Shopping_Cart:
     #Parameter Constructor
-    def __init__(self, customer_name = 'none', currentdate = 'January 1, 2021', cartItems = [], cartID = 0):
-        self.customer_name = customer_name
+    def __init__(self, customer_ID = 0, currentdate = 'January 1, 2021', cartItems = [], cartID = 0):
+        self.customer_ID = customerID
         self.currentdate = currentdate
         self.cartItems = cartItems
         self.cartID = cartID
@@ -78,7 +78,7 @@ class Shopping_Cart:
     def result_cart(self):
         new1=Shopping_Cart()
         print('\nOUTPUT', end='\n')
-        print('{}\'s Shopping Cart - {}'.format(self.customer_name, self.currentdate))
+        print('{}\'s Shopping Cart - {}'.format(self.customer_ID, self.currentdate))
         print('Number of Items:', new1.get_numberitems_cart(), end='\n\n')
         tc1 = 0
         for item1 in self.cartItems:
