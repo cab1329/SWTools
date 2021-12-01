@@ -26,7 +26,7 @@ class Storefront:
                 self.checkInventory()
             else if num == 2:
                 print("1. View Cart\n2.Remove item from cart\n3. Add item to cart\n")
-                print("4. Empty cart\n5. Check out\n6. Go back\n")
+                print("4. Empty cart\n5. Check out\n6. Modify quantity of item in cart\n7. Go back\n")
 
                 cartNum = int(input("Please enter the number of your choice: " ))
 
@@ -44,6 +44,8 @@ class Storefront:
                 else if cartNum == 5:
                     self.checkout()
                 else if cartNum == 6:
+                    self.cart.modifyItem()
+                else if cartNum == 7:
                     pass
                 else:
                     print("Invalid answer, returning to main menu")
