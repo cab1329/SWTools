@@ -1,3 +1,5 @@
+from item import Item
+
 #Shopping cart class
 class Shopping_Cart:
     #Parameter Constructor
