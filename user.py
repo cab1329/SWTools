@@ -158,8 +158,14 @@ class User:
             cursor.execute('SELECT Password FROM user WHERE UserName == test1')
             test2= cursor.fetchone()
             if test2==password{
-                print("login succesful")}
-            else{ print("login failed")}
-        else{print("login failed")}
+                print("login succesful")
+                cursor.close()
+                return True    }
+            else{ print("login failed")
+                cursor.close()
+                return False}
+        else{print("login failed")
+            cursor.close()
+            return False}
         }
     
