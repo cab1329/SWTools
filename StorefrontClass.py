@@ -109,6 +109,7 @@ class Storefront:
                     currentUser.display()
                 elif accountNum == 2:
                     for x in orders:
+                        pass
                         #displaying orders, figure out later 
                 elif accountNum == 3:
                     print("1. Edit shipping address\n2. Edit username\n3. Edit password\n4. Edit first name\n5. Edit last name\n6. Edit phone number\n7. Go Back\n")
