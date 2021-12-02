@@ -145,7 +145,7 @@ class User:
                 cursor.close()
                 return True
             else:
-                print("login failed')
+                print("login failed")
                 cursor.close()
                 return False
         else:
