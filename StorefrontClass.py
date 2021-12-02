@@ -101,7 +101,7 @@ class Storefront:
                     print("Invalid answer, returning to main menu")
             else if num == 3:
                 print("1. View user information\n2. View Order history\n")
-                print("3. Edit information\n4. Go back\n")
+                print("3. Edit information\n4.Delete Account\n5. Go back\n")
 
                 accountNum = int(input("Please enter the number of your choice: "))
 
@@ -139,6 +139,16 @@ class Storefront:
                     else:
                         print("Invalid answer, returning to main menu")
                 else if accountNum == 4:
+                    cursor = connection.cursor()
+                    deleteID = int(input("Please enter your User ID to confirm deletion"))
+                    cursor.execute("DELETE * FROM users WHERE userID = deleteID")
+                    connection.commit()
+                    print("User deleted")
+                    cursor.close()
+
+                    choice == False
+                    
+                else if accountNum == 5:
                     pass
                 else:
                     print("Invalid answer, returning to main menu")
