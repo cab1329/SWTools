@@ -16,7 +16,7 @@ except:
 class User:
     
     #Constructor
-    def __init__(self, firstname, lastname, address, phone, username, password, cartID, userID):
+    def __init__(self, firstname, lastname, address, phone, username, password, userID):
         try:
             self.firstname = str(firstname)
         except:
@@ -33,12 +33,6 @@ class User:
             print("User.address: TypeError")
         except:
             print("User.address: An unknown error occurred.")
-        try:
-            self.cartID = int(cartID)
-        except TypeError:
-            print("User.cartID: TypeError")
-        except:
-            print("User.cartID: An unknown error occurred.")
         try:
             self.phone = str(phone)
         except TypeError:
@@ -93,13 +87,7 @@ class User:
             self.lastname = str(lastname)
         except:
             print("User.setLastname: An unknown error occurred.")
-    def setRole(self, role):
-        try:
-            self.role = str(role)
-        except TypeError:
-            print("User.setRole: TypeError")
-        except:
-            print("User.setRole: An unknown error occurred.")
+   
     def setAddress(self, address):
         try:
             self.address = str(address)
@@ -114,14 +102,6 @@ class User:
             print("User.setPhone: TypeError")
         except:
             print("User.setPhone: An unknown error occurred.")
-    def setCart(self, cartID):
-        try:
-            self.cartID = int(cartID)
-        except TypeError:
-            print("User.setCart: TypeError")
-        except:
-            print("User.setCart: An unknown error occurred.")
-
     def setUID(self, userID):
         try:
             self.UID = int(userID)
@@ -149,9 +129,6 @@ class User:
 
     def getAddress(self):
         return self.address
-
-    def getCart(self):
-        return self.cartID
 
     def getUID(self):
         return self.userID
