@@ -91,7 +91,7 @@ class User:
             print("User.setPhone: An unknown error occurred.")
     def setUID(self, userID):
         try:
-            self.UID = int(userID)
+            self.userID = int(userID)
         except TypeError:
             print("User.setUID: TypeError")
         except:
@@ -128,19 +128,17 @@ class User:
             cursor.execute('SELECT Password FROM User WHERE UserName == test1')
             test2 = cursor.fetchone()
             if (test2==password):
-                print("login succesful")
                 cursor.close()
                 return True
             else:
-                print("login failed")
                 cursor.close()
                 return False
         else:
-            print("login failed")
             cursor.close()
             return False
     #Display
     def display():
         print(firstname, lastname, address, phone, username, password, userID)
     #Order History
-    def orderhistory();
+    def orderhistory():
+        history[]
