@@ -1,18 +1,5 @@
 import mysql.connector
 import sys
-## attempts to connect to the database
-try:
-    connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="methods"
-    )
-    print("Successful connection.")
-except:
-    print("Failed connection.")
-    ## exits the program if unsuccessful
-    sys.exit()
 class User:
     
     #Constructor
