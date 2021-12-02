@@ -235,14 +235,14 @@ class Storefront:
         
     def writeOrders(self):
         cursor = connection.cursor()
-        cursor.execute("INSERT INTO orders (whatever the hell goes here idk)")
+        cursor.execute("INSERT INTO orders orders")
         connection.commit()
 
         cursor.close()
         
     def writeCart(self):
         cursor = connection.cursor()
-        cursor.execute("INSERT INTO cart (whatever the hell goes here idk)")
+        cursor.execute("INSERT INTO cart cart)")
         connection.commit()
 
         cursor.close()
