@@ -32,9 +32,8 @@ if login == True:
 
     store.displayMenu()
 
-    store.writeOrders()
-    store.writeCart()
-    store.writeItem()
+    store.writeOrders(cursor)
+    store.writeCart(cursor)
 
     connection.close()
 
