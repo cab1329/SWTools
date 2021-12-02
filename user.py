@@ -142,3 +142,5 @@ class User:
     #Display
     def display():
         print(firstname, lastname, address, phone, username, password, userID)
+    #Order History
+    def orderhistory();
