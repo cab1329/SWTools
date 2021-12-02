@@ -18,11 +18,11 @@ class Shopping_Cart:
     #remove from cart
     def removeItem(self):
         print('\nREMOVE ITEM ',end='\n')
-        string = str(input('Enter item to delete: '))
+        integer = int(input('Enter item to delete: '))
         i1 = 0
         #loop through the cart
         for item1 in self.cartItems:
-            if(item1.itemName == string):       
+            if(item1.itemName == integer):       
                 del self.cartItems[i1]
                 flagvalue=True
                 break
