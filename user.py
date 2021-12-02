@@ -152,4 +152,4 @@ class User:
             return False
     #Display
     def display():
-        print(firstname, lastname, address, phone, username, password, cartID, userID)
+        print(firstname, lastname, address, phone, username, password, userID)
