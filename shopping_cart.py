@@ -13,13 +13,11 @@ class Shopping_Cart:
         print('\nADD ITEM ' , end='\n')
         self.cartItems.append(Item(itemName, itemQuantity))
     #remove from cart
-    def removeItem(self):
-        print('\nREMOVE ITEM ',end='\n')
-        integer = int(input('Enter item to delete: '))
+    def removeItem(itemID):
         i1 = 0
         #loop through the cart
         for item1 in self.cartItems:
-            if(item1.itemName == integer):       
+            if(item1.itemName == itemID):       
                 del self.cartItems[i1]
                 flagvalue=True
                 break
