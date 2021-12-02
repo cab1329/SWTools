@@ -18,7 +18,7 @@ except:
     sys.exit()
 username = input("Please enter username: ")
 password = input("Please enter password: ")
-tempUser = User(None, None, None, None, None, None, None, None, None)
+tempUser = User(None, None, None, None, None, None, None, None)
 login = tempUser.login(username, password)
 
 if login == True:
