@@ -187,8 +187,7 @@ class Storefront:
         else:
             print("Invalid Answer, returning to main menu")
 
-    def loadInventory(self):
-        cursor = connection.cursor()
+    def loadInventory(self, cursor):
         cursor.execute("SELECT * FROM items")
         result = cursor.fetchall()
 
@@ -197,7 +196,6 @@ class Storefront:
         for x in result:
             self.inventory.addItem()
 
-        cursor.close()
         
     def checkInventory(self):
         cursor = connection.cursor()
@@ -207,10 +205,8 @@ class Storefront:
         for x in result:
             print(x)
 
-        cursor.close()
         
-    def loadUsers(self):
-        cursor = connection.cursor()
+    def loadUsers(self, cursor):
         cursor.execute("SELECT * FROM users")
         result = cursor.fetchall()
 
@@ -219,10 +215,8 @@ class Storefront:
         for x in result:
             self.users.append(x)
 
-        cursor.close()
             
-    def loadOrders(self):
-        cursor = connection.cursor()
+    def loadOrders(self, cursor):
         cursor.execute("SELECT * FROM orders")
         result = cursor.fetchall()
 
@@ -231,10 +225,8 @@ class Storefront:
         for x in result:
             self.orders.append(x)
 
-        cursor.close()
         
     def writeOrders(self):
-        cursor = connection.cursor()
         cursor.execute("INSERT INTO orders orders")
         connection.commit()
 
