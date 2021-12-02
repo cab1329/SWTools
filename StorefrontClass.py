@@ -111,8 +111,7 @@ class Storefront:
                     for x in orders:
                         #displaying orders, figure out later 
                 elif accountNum == 3:
-                    print("1. Edit shipping address\n2. Edit username\n3. Edit password\n")
-                    print("4. Edit first name\n5. Edit last name\n6. Edit phone number\n7. Go Back\n")
+                    print("1. Edit shipping address\n2. Edit username\n3. Edit password\n4. Edit first name\n5. Edit last name\n6. Edit phone number\n7. Go Back\n")
 
                     editNum == int(input("Please enter the number of your choice: "))
 
