@@ -24,7 +24,7 @@ class Storefront:
 
             if num == 1:
                 self.checkInventory()
-            else if num == 2:
+            elif num == 2:
                 print("1. View Cart\n2.Remove item from cart\n3. Add item to cart\n")
                 print("4. Empty cart\n5. Check out\n6. Modify quantity of item in cart\n7. Go back\n")
 
