@@ -24,7 +24,7 @@ login = tempUser.login(username, password)
 if login == True:
     store = Storefront(None, None, None, None, None)
 
-else if login == False:
+elif login == False:
     print("Login Failed, exiting program")
     
 Storefront.loadUsers()
