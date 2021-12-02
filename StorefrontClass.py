@@ -32,7 +32,7 @@ class Storefront:
 
                 if cartNum == 1:
                     self.cart.result_cart() 
-                else if cartNum == 2:
+                elif cartNum == 2:
                     print("Which item would you like to remove?\n")
                     self.cart.result_cart()
                     itemID = int(input("Please enter the item ID of the item you would like to remove: "))
@@ -45,14 +45,14 @@ class Storefront:
                     if itemFound == False:
                         print("Item not found, please try again.\n")
 
-                    else if itemFound == True:
+                    elif itemFound == True:
                         self.cart.removeItem(itemID)
                         print("Item removed from cart.\n")
 
                     else:
                         print("An error has occured, returning to main menu\n")
                             
-                else if cartNum == 3:
+                elif cartNum == 3:
                     print("Which item would you like to add?\n")
                     self.inventory.result_cart()
                     itemID = int(input("Please enter the item ID of the item you would like to add: "))
@@ -66,7 +66,7 @@ class Storefront:
                     if itemFound == False:
                         print("Item not found, please try again.\n")
 
-                    else if itemFound == True:
+                    elif itemFound == True:
                         itemQuantity = int(input("Please enter the quantity you would like to order: "))
                         if itemQuantity > 0:
                             tempItem = self.inventory(itemIndex)
@@ -74,13 +74,13 @@ class Storefront:
                                 self.cart.addItem(itemID, itemQuantity)
                                 print("Item has been added to cart\n")
 
-                            else if tempItem.getQuantity() > itemQuantity:
+                            elif tempItem.getQuantity() > itemQuantity:
                                 print("Item cannot be added to cart because the quantity you want to exceeds the quantity in stock\n")
 
                             else:
                                 print("An error has occured, returning to main menu\n")
 
-                        else if itemQuantity < 1:
+                        elif itemQuantity < 1:
                             print("The item quantity cannot be zero or negative\n")
 
                         else:
@@ -89,17 +89,17 @@ class Storefront:
                     else:
                         print("An error has occured, returning to main menu\n")
                     
-                else if cartNum == 4:
+                elif cartNum == 4:
                     self.cart.clearCart()
-                else if cartNum == 5:
+                elif cartNum == 5:
                     self.checkout()
-                else if cartNum == 6:
+                elif cartNum == 6:
                     self.cart.modifyItem()
-                else if cartNum == 7:
+                elif cartNum == 7:
                     pass
                 else:
                     print("Invalid answer, returning to main menu")
-            else if num == 3:
+            elif num == 3:
                 print("1. View user information\n2. View Order history\n")
                 print("3. Edit information\n4.Delete Account\n5. Go back\n")
 
@@ -107,10 +107,10 @@ class Storefront:
 
                 if accountNum == 1:
                     currentUser.display()
-                else if accountNum == 2:
+                elif accountNum == 2:
                     for x in orders:
                         #displaying orders, figure out later 
-                else if accountNum == 3:
+                elif accountNum == 3:
                     print("1. Edit shipping address\n2. Edit username\n3. Edit password\n")
                     print("4. Edit first name\n5. Edit last name\n6. Edit phone number\n7. Go Back\n")
 
@@ -119,26 +119,26 @@ class Storefront:
                     if editNum == 1:
                         editAddress = input("Enter your new address: ")
                         self.currentUser.setAddress(editAddress)
-                    else if editNum == 2:
+                    elif editNum == 2:
                         editUsername = input("Enter your new username: ")
                         self.currentUser.setUsername(editUsername)
-                    else if editNum == 3:
+                    elif editNum == 3:
                         editPassword = input("Enter your new password: ")
                         self.currentUser.setPassword(editPassword)
-                    else if editNum == 4:
+                    elif editNum == 4:
                         editFirst = input("Enter your new first name: ")
                         self.currentUser.setFirstname(editFirst)
-                    else if editNum == 5:
+                    elif editNum == 5:
                         editLast = input("Enter your new last name: ")
                         self.currentUser.setLastname(editLast)
-                    else if editNum == 6:
+                    elif editNum == 6:
                         editNumber = input("Enter your new phone number: ")
                         self.currentUser.setPhone(editNumber)
-                    else if editNum == 7:
+                    elif editNum == 7:
                         pass
                     else:
                         print("Invalid answer, returning to main menu")
-                else if accountNum == 4:
+                elif accountNum == 4:
                     cursor = connection.cursor()
                     deleteID = int(input("Please enter your User ID to confirm deletion"))
                     cursor.execute("DELETE * FROM users WHERE userID = deleteID")
@@ -148,11 +148,11 @@ class Storefront:
 
                     choice == False
                     
-                else if accountNum == 5:
+                elif accountNum == 5:
                     pass
                 else:
                     print("Invalid answer, returning to main menu")
-            else if num == 4:
+            elif num == 4:
                 print("Thank you for shopping!")
                 choice = False
             else:
@@ -176,13 +176,13 @@ class Storefront:
                 self.cart.clear()
                 print("Order has been placed, thank you for ordering!\n")
 
-            else if addressCheck == n:
+            elif addressCheck == n:
                 print("Please edit your address in the Edit information tab and try again.")
 
             else:
                 print("Invalid Answer, returning to main menu")
 
-        else if checkout == n:
+        elif checkout == n:
             pass
         else:
             print("Invalid Answer, returning to main menu")
