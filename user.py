@@ -16,7 +16,7 @@ except:
 class User:
     
     #Constructor
-    def __init__(self, firstname, lastname, address, phone, username, password, role, cartID, userID):
+    def __init__(self, firstname, lastname, address, phone, username, password, cartID, userID):
         try:
             self.firstname = str(firstname)
         except:
@@ -57,12 +57,6 @@ class User:
             print("User.password: TypeError")
         except:
             print("User.password: An unknown error occurred.")
-        try:
-            self.role = str(role)
-        except TypeError:
-            print("User.role: TypeError")
-        except:
-            print("User.role: An unknown error occurred.")
         try:
             self.userID = int(userID)
         except TypeError:
@@ -161,7 +155,7 @@ class User:
 
     def getUID(self):
         return self.userID
-    #Login/Logout
+    #Login
     def login(self,username,password):
         cursor = connection.cursor()
         cursor.execute('SELECT UserName FROM user WHERE UserName == username')
@@ -180,4 +174,6 @@ class User:
             cursor.close()
             return False}
         }
-    
+    #Display
+    def display():
+        print(firstname, lastname, address, phone, username, password, cartID, userID)
