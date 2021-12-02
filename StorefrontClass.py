@@ -198,7 +198,6 @@ class Storefront:
 
         
     def checkInventory(self):
-        cursor = connection.cursor()
         cursor.execute("SELECT * FROM items")
         result = cursor.fetchall()
 
@@ -214,7 +213,6 @@ class Storefront:
 
         for x in result:
             self.users.append(x)
-
             
     def loadOrders(self, cursor):
         cursor.execute("SELECT * FROM orders")
@@ -226,25 +224,22 @@ class Storefront:
             self.orders.append(x)
 
         
-    def writeOrders(self):
+    def writeOrders(self, cursor):
         cursor.execute("INSERT INTO orders orders")
         connection.commit()
 
-        cursor.close()
         
-    def writeCart(self):
+    def writeCart(self, cursor):
         cursor = connection.cursor()
         cursor.execute("INSERT INTO cart cart)")
         connection.commit()
 
-        cursor.close()
 
-    def writeItem(self, item):
+    def writeItem(self, item, cursor):
         cursor = connection.cursor()
         cursor.execute("INSERT INTO items item")
         connection.commit()
 
-        cursor.close()
 
     def setCurrUser(self, userID):
         self.currentUser = userID
