@@ -18,23 +18,25 @@ except:
     sys.exit()
 username = input("Please enter username: ")
 password = input("Please enter password: ")
-tempUser = User(None, None, None, None, None, None, None)
+tempUser = User(None, None, None, None, None, None, None, None)
 login = tempUser.login(username, password)
 
 if login == True:
     store = Storefront(None, None, None, None, None)
 
-elif login == False:
+else if login == False:
     print("Login Failed, exiting program")
     
-Storefront.loadUsers()
-Storefront.loadOrders()
-Storefront.loadInventory()
+store.loadUsers()
+store.loadOrders()
+store.loadInventory()
 
-Storefront.displayMenu()
+store.setCurrUser(store.users[0].getuserID())
 
-Storefront.writeOrders()
-Storefront.writeCart()
-Storefront.writeItem()
+store.displayMenu()
+
+store.writeOrders()
+store.writeCart()
+store.writeItem()
 
 connection.close()
