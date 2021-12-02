@@ -122,7 +122,7 @@ class User:
     #Login
     def login(self,username,password):
         cursor = connection.cursor()
-        cursor.execute('SELECT UserName FROM User WHERE UserName == username')
+        cursor.execute('SELECT username FROM users WHERE username = \'%s\'' % username)
         test1= cursor.fetchone()
         if (test1 == username):
             cursor.execute('SELECT Password FROM User WHERE UserName == test1')
