@@ -137,17 +137,19 @@ class User:
         cursor = connection.cursor()
         cursor.execute('SELECT UserName FROM user WHERE UserName == username')
         test1= cursor.fetchone()
-        if (test1 == username)
+        if (test1 == username):
             cursor.execute('SELECT Password FROM user WHERE UserName == test1')
-            test2= cursor.fetchone()
-            if (test2==password)
+            test2 = cursor.fetchone()
+            if (test2==password):
                 print("login succesful")
                 cursor.close()
                 return True
-            else print("login failed")
+            else:
+                print("login failed')
                 cursor.close()
                 return False
-        elseprint("login failed")
+        else:
+            print("login failed")
             cursor.close()
             return False
     #Display
