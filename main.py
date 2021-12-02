@@ -23,11 +23,7 @@ login = tempUser.login(username, password)
 
 if login == True:
     store = Storefront(None, None, None, None, None)
-
-elif login == False:
-    print("Login Failed, exiting program")
-    
-store.loadUsers()
+    store.loadUsers()
 store.loadOrders()
 store.loadInventory()
 
@@ -40,3 +36,7 @@ store.writeCart()
 store.writeItem()
 
 connection.close()
+
+elif login == False:
+    print("Login Failed, exiting program")
+    
