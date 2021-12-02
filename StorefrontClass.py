@@ -35,10 +35,60 @@ class Storefront:
                 else if cartNum == 2:
                     print("Which item would you like to remove?\n")
                     self.cart.result_cart()
-#not sure how to finish this command off, open to suggestions. We would need it to have a lot of different options and be open to all of them
-#will options. Please help with this one 
+                    itemID = int(input("Please enter the item ID of the item you would like to remove: "))
+                    itemFound == False
+                    for x in self.cart:
+                        tempItem = self.cart(x)
+                        if itemID == tempItem.getID():
+                            itemFound = True
+
+                    if itemFound == False:
+                        print("Item not found, please try again.\n")
+
+                    else if itemFound == True:
+                        self.cart.removeItem(itemID)
+                        print("Item removed from cart.\n")
+
+                    else:
+                        print("An error has occured, returning to main menu\n")
+                            
                 else if cartNum == 3:
-                    #need to know how many items we are going to have before i create this command, also not sure how to implement
+                    print("Which item would you like to add?\n")
+                    self.inventory.result_cart()
+                    itemID = int(input("Please enter the item ID of the item you would like to add: "))
+                    itemFound == False
+                    for x in self.inventory:
+                        tempItem = self.inventory(x)
+                        if itemID == tempItem.getID():
+                            itemFound = True
+                            itemIndex = x
+
+                    if itemFound == False:
+                        print("Item not found, please try again.\n")
+
+                    else if itemFound == True:
+                        itemQuantity = int(input("Please enter the quantity you would like to order: "))
+                        if itemQuantity > 0:
+                            tempItem = self.inventory(itemIndex)
+                            if tempItem.getQuantity() <= itemQuantity:
+                                self.cart.addItem(itemID, itemQuantity)
+                                print("Item has been added to cart\n")
+
+                            else if tempItem.getQuantity() > itemQuantity:
+                                print("Item cannot be added to cart because the quantity you want to exceeds the quantity in stock\n")
+
+                            else:
+                                print("An error has occured, returning to main menu\n")
+
+                        else if itemQuantity < 1:
+                            print("The item quantity cannot be zero or negative\n")
+
+                        else:
+                            print("An error has occured, returning to main menu\n")
+                        
+                    else:
+                        print("An error has occured, returning to main menu\n")
+                    
                 else if cartNum == 4:
                     self.cart.clearCart()
                 else if cartNum == 5:
@@ -56,7 +106,7 @@ class Storefront:
                 accountNum = int(input("Please enter the number of your choice: "))
 
                 if accountNum == 1:
-                    currentUser#display function
+                    currentUser.display()
                 else if accountNum == 2:
                     for x in orders:
                         #displaying orders, figure out later 
