@@ -4,7 +4,7 @@ from item import Item
 class Shopping_Cart:
     #Parameter Constructor
     def __init__(self, customer_ID = 0, currentdate = 'January 1, 2021', cartItems = [], cartID = 0):
-        self.customer_ID = customerID
+        self.customer_ID = customer_ID
         self.currentdate = currentdate
         self.cartItems = cartItems
         self.cartID = cartID
