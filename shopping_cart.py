@@ -9,12 +9,9 @@ class Shopping_Cart:
         self.cartItems = cartItems
         self.cartID = cartID
     #Add an item
-    def addItem(self, string):
+    def addItem(self, itemName, itemQuantity):
         print('\nADD ITEM ' , end='\n')
-        itemName = str(input('Enter item name: '))
-        itemPrice = float(input('\nEnter the item price: '))
-        itemQuantity = int(input('\nEnter the item quantity: '))
-        self.cartItems.append(Item(itemName, itemPrice, itemQuantity))
+        self.cartItems.append(Item(itemName, itemQuantity))
     #remove from cart
     def removeItem(self):
         print('\nREMOVE ITEM ',end='\n')
