@@ -22,7 +22,7 @@ tempUser = User(None, None, None, None, None, None, None)
 login = tempUser.login(username, password)
 
 if login == True:
-    store = Storefront(None, None, None, None, None)
+    store = Storefront(0, 0, 0, 0, 0)
     cursor = connection.cursor()
     store.loadUsers(cursor)
     store.loadOrders(cursor)
