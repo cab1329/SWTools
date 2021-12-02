@@ -122,10 +122,10 @@ class User:
     #Login
     def login(self,username,password):
         cursor = connection.cursor()
-        cursor.execute('SELECT UserName FROM user WHERE UserName == username')
+        cursor.execute('SELECT UserName FROM User WHERE UserName == username')
         test1= cursor.fetchone()
         if (test1 == username):
-            cursor.execute('SELECT Password FROM user WHERE UserName == test1')
+            cursor.execute('SELECT Password FROM User WHERE UserName == test1')
             test2 = cursor.fetchone()
             if (test2==password):
                 print("login succesful")
