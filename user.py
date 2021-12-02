@@ -1,4 +1,4 @@
-mport mysql.connector
+import mysql.connector
 import sys
 ## attempts to connect to the database
 try:
@@ -152,9 +152,6 @@ class User:
     
     def getPhone(self):
         return self.phone
-   
-    def getRole(self):
-        return self.role
 
     def getAddress(self):
         return self.address
