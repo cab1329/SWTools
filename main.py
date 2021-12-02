@@ -23,9 +23,10 @@ login = tempUser.login(username, password)
 
 if login == True:
     store = Storefront(None, None, None, None, None)
-    store.loadUsers()
-    store.loadOrders()
-    store.loadInventory()
+    cursor = connection.cursor()
+    store.loadUsers(cursor)
+    store.loadOrders(cursor)
+    store.loadInventory(cursor)
 
     store.setCurrUser(store.users[0].getuserID())
 
